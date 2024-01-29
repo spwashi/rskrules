@@ -1,0 +1,54 @@
+html {
+    height: 100%;
+}
+body {
+    background-color: #a69261;
+    border: 1rem solid black;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Courier New", monospace;
+    font-size: 20px;
+    font-weight: bold;
+}
+ul {
+    width: 30ch;
+}
+a:link {
+    color: black;
+}
+a:visited {
+    color: #003838;
+}
+main > :is(h1,h2,h3,h4,h5,h6) {
+    text-align: center;
+}
+main {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50ch;
+}
+main ul {
+    text-align: left;
+}
+.cover-art-link {
+    display: inline-flex;
+}
+.cover-art-link > figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cover-art-link > figure figcaption {
+    width: 30ch;
+    padding: 1rem;
+}
+footer {
+    margin: 3rem;
+}
