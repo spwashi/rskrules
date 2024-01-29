@@ -4,8 +4,8 @@ html {
 body:after {
     content: '';
     border: 1rem solid black;
-    width: calc(100vw - 2rem);
-    height: calc(100vh - 2rem);
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
     position: fixed;
     top: .0rem;
     left: .0rem;
