@@ -2,19 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>RSK &bull; Home</title>
-    <link rel="stylesheet" href="/public/css/style.00002.css?v=a">
+    <link rel="stylesheet" href="/public/css/style.00003.css?v=a">
+    <script>
+      const highlightOptions = [
+        'the-adventures-of',
+        'hemera-nyx',
+        'in',
+        'the-galaxy-of',
+        'the-future'
+      ];
+
+      let i = 0;
+      setInterval(() => {
+        document.body.dataset.highlight = highlightOptions[i % highlightOptions.length];
+        i++;
+      }, 500);
+    </script>
 </head>
 <body>
-    <details>
-        <summary>RSK</summary>
-        <ul>
-            <li>Indie Author</li>
-            <li>Adventure Novelist</li>
-            <li>Developmental Editor</li>
-        </ul>
-    </details>
     <header>
         <nav>
             <ul>
@@ -31,7 +38,13 @@
             <li>
                 <h3><a href="/novels">Novels</a></h3>
                 <ul>
-                    <li><a href="/novels#hemera-nyx">The Adventures of Hemera Nyx in the Galaxy of the Future!</a></li>
+                    <li><a href="/novels#hemera-nyx" class="book-name">
+                        <span class="the-adventures-of">The Adventures of</span>
+                        <span class="hemera-nyx">Hemera Nyx</span>
+                        <span class="in">in</span>
+                        <span class="the-galaxy-of">the Galaxy of</span>
+                        <span class="the-future">the <span class="future">Future!</span></span>
+                    </a></li>
                 </ul>
             </li>
             <li>
