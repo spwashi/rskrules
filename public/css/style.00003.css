@@ -107,8 +107,14 @@ body[data-highlight=in] .book-name .in { font-weight: bold; }
 body[data-highlight=the-galaxy-of] .book-name .the-galaxy-of { font-weight: bold; }
 body[data-highlight=the-future] .book-name .the-future { font-weight: bold; }
 body[data-highlight=the-future] .book-name .the-future .future { text-decoration: underline; }
-
 .services .featured {
     background-color: var(--visited-link-color);
     color: white
+}
+#services .how-to-get-a-signed-copy li > * {
+    display: block;
+    white-space: pre;
+}
+#services > section {
+    width: 100%;
 }
