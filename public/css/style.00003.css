@@ -1,3 +1,6 @@
+:root {
+    --visited-link-color: #003838;
+}
 html {
     height: 100%;
     width: 100%;
@@ -57,7 +60,7 @@ a:link {
     color: black;
 }
 a:visited {
-    color: #003838;
+    color: var(--visited-link-color);
 }
 main > :is(h1,h2,h3,h4,h5,h6) {
     text-align: center;
@@ -104,3 +107,8 @@ body[data-highlight=in] .book-name .in { font-weight: bold; }
 body[data-highlight=the-galaxy-of] .book-name .the-galaxy-of { font-weight: bold; }
 body[data-highlight=the-future] .book-name .the-future { font-weight: bold; }
 body[data-highlight=the-future] .book-name .the-future .future { text-decoration: underline; }
+
+.services .featured {
+    background-color: var(--visited-link-color);
+    color: white
+}
