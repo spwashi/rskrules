@@ -15,6 +15,35 @@
             align-items: center;
             flex-direction: column;
         }
+        input, textarea {
+            font-family: "Courier New", monospace;
+            padding: .5rem;
+            background: none;
+            border: thin solid #333333;
+            font-size: 20px;
+        }
+        input[type=text],
+        input[type=email],
+        textarea {
+            width: 30ch;
+        }
+        ::placeholder {
+            color: #333333;
+            opacity: .3;
+        }
+        input[type=checkbox] {
+            margin: 0 1rem;
+        }
+        label {
+            margin: .5rem 0;
+        }
+        fieldset {
+            margin-bottom: 1rem;
+        }
+        a {
+            color: blue;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -63,7 +92,7 @@
             </p>
             <p>
                 <span>Ready to get started?</span>
-                <span>Book an appointment or fill out the contact form below and let's chat.</span>
+                <span>Book an appointment or fill out the <a href="#contact-form">contact form</a> below and let's chat.</span>
                 <span>You can email me at <a href="mailto:rsk.author@gmail.com">rsk.author@gmail.com</a>.</span>
             </p>
         </section>
@@ -146,7 +175,7 @@
                 <li>
                     <h5>First Step:</h5>
                     <ul>
-                        <li>Fill out the contact form</li>
+                        <li>Fill out the <a href="#contact-form">contact form</a></li>
                     </ul>
                 </li>
                 <li>
@@ -174,16 +203,16 @@
         </section>
         <section id="query">
             <h3>Contact Form</h3>
-            <form name="contact--hyper_nostalgia" netlify>
+            <form id="contact-form" name="contact--hyper_nostalgia" netlify>
                 <fieldset class="author-info">
                     <legend>Author Info</legend>
                     <label>
                         <span>Name</span>
-                        <input type="text" name="author-name">
+                        <input required type="text" name="author-name" placeholder="Author Name">
                     </label>
                     <label>
                         <span>Email</span>
-                        <input type="email" name="email">
+                        <input required type="email" name="email" placeholder="author@example.com">
                     </label>
                 </fieldset>
                 <fieldset class="story-genre">
@@ -213,6 +242,10 @@
                         <span>Mystery/Crime</span>
                     </label>
                     <label>
+                        <input type="checkbox" name="is-alternative-history">
+                        <span>Alternative History</span>
+                    </label>
+                    <label>
                         <input type="checkbox" name="is-other-genre">
                         <span>Other</span>
                     </label>
@@ -221,11 +254,11 @@
                     <legend>Info</legend>
                     <label>
                         <span>Length</span>
-                        <input type="text">
+                        <input required type="text" placeholder="75,000 words">
                     </label>
                     <label>
                         <span>Synopsis</span>
-                        <textarea name="synopsis"></textarea>
+                        <textarea required name="synopsis" placeholder="Once upon a blurb..."></textarea>
                     </label>
                 </fieldset>
                 <fieldset class="turnaround">
@@ -235,15 +268,15 @@
                         <input type="date" name="turnaround">
                     </label>
                 </fieldset>
-                <fieldset>
+                <fieldset class="notes">
                     <legend>Questions, Notes, Special Requests</legend>
                     <label>
                         <span>Note</span>
-                        <textarea name="note"></textarea>
+                        <textarea name="note" placeholder="I'm excited about..."></textarea>
                     </label>
                 </fieldset>
-                <fieldset>
-                    <legend>submit</legend>
+                <fieldset class="submit">
+                    <legend>[submit]</legend>
                     <button type="submit">submit</button>
                 </fieldset>
             </form>

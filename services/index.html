@@ -8,6 +8,17 @@
     <link rel="manifest" href="/public/v0.0.1-a/manifest.json?v=24-02-13">
     <link rel="icon" type="image/png" href="/public/v0.0.1-a/favicon/favicon.png?v=24-02-13?v=24-02-13">
     <link rel="stylesheet" href="/public/css/style.00003.css?v=24-02-13">
+    <style>
+        .engagement-handle {
+            cursor: pointer;
+        }
+        .require-engagement {
+            display: none;
+        }
+        .require-engagement.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -45,42 +56,50 @@
                 </li>
             </ul>
             <section id="signed-book--round-trip">
-                <h4 class="option-1">Option 1: Round Trip!</h4>
-                <p>This one is pretty simple.</p>
-                <ol>
-                    <li>
-                        <p>Buy a physical copy from Amazon.</p>
-                    </li>
-                    <li>
-                        <p>Mail it to my <a href="https://sites.google.com/view/rskrules/signed-copies">P.O Box</a></p>
-                    </li>
-                    <li>
-                        <p>I'll sign it and send it back to you!</p>
-                    </li>
-                </ol>
-                <p>
-                    <strong>Please send at least $5 per copy</strong> to help cover the cost of mailing it back to you.
-                    Anything above the cost of mailing I'll consider a donation.
-                </p>
-                <a href="https://sites.google.com/view/rskrules/signed-copies">P.O Box Details</a>
+                <header aria-controls="round-trip-details" class="engagement-handle">
+                    <h4 class="option-1">Option 1: Round Trip!</h4>
+                </header>
+                <section id="round-trip-details" class="require-engagement" data-topic="#signed-book--round-trip">
+                    <p>This one is pretty simple.</p>
+                    <ol>
+                        <li>
+                            <p>Buy a physical copy from Amazon.</p>
+                        </li>
+                        <li>
+                            <p>Mail it to my <a href="https://sites.google.com/view/rskrules/signed-copies">P.O Box</a></p>
+                        </li>
+                        <li>
+                            <p>I'll sign it and send it back to you!</p>
+                        </li>
+                    </ol>
+                    <p>
+                        <strong>Please send at least $5 per copy</strong> to help cover the cost of mailing it back to you.
+                        Anything above the cost of mailing I'll consider a donation.
+                    </p>
+                    <a href="https://sites.google.com/view/rskrules/signed-copies">P.O Box Details</a>
+                </section>
             </section>
             <section id="signed-book--from-the-source">
-                <h4 class="option-2">Option 2: From the source!</h4>
-                <p>This is a great way to support my ecosystem. And you get a signed copy!</p>
-                <ul>
-                    <li>Signed Paperback: $50</li>
-                    <li>Signed Hardcover: $80</li>
-                </ul>
-                <p>
-                    You can pay via <a href="https://paypal.me/rskrules?country.x=US&locale.x=en_US">PayPal</a> or <a href="https://ko-fi.com/rskrules">Ko-Fi</a>.
-                    Please be sure to add the following in the notes:
-                </p>
-                <ul>
-                    <li>Book/Cover choice</li>
-                    <li>Mailing address</li>
-                    <li>Custom instructions</li>
-                </ul>
-                <p>Your book will arrive within a few weeks!</p>
+                <header aria-controls="from-the-source-details" class="engagement-handle">
+                    <h4 class="option-2">Option 2: From the source!</h4>
+                </header>
+                <section id="from-the-source-details" class="require-engagement" data-topic="#signed-book--from-the-source">
+                    <p>This is a great way to support my ecosystem. And you get a signed copy!</p>
+                    <ul>
+                        <li>Signed Paperback: $50</li>
+                        <li>Signed Hardcover: $80</li>
+                    </ul>
+                    <p>
+                        You can pay via <a href="https://paypal.me/rskrules?country.x=US&locale.x=en_US">PayPal</a> or <a href="https://ko-fi.com/rskrules">Ko-Fi</a>.
+                        Please be sure to add the following in the notes:
+                    </p>
+                    <ul>
+                        <li>Book/Cover choice</li>
+                        <li>Mailing address</li>
+                        <li>Custom instructions</li>
+                    </ul>
+                    <p>Your book will arrive within a few weeks!</p>
+                </section>
             </section>
             <p>
                 Updates to this information will be posted <a href="https://sites.google.com/view/rskrules/signed-copies?authuser=0">[here]</a>.
@@ -97,5 +116,20 @@
             </figure>
         </a>
     </main>
+    <script type="application/javascript">
+      document.querySelectorAll('.engagement-handle').forEach(element => {
+        element.addEventListener('click', () => {
+          console.log('here')
+          document.getElementById(element.getAttribute('aria-controls')).classList.toggle('active')
+        })
+      });
+
+      const hash = document.location.hash;
+      document.querySelectorAll('[data-topic]').forEach(element => {
+        if (hash === element.dataset.topic) {
+          element.classList.add('active')
+        }
+      });
+    </script>
 </body>
 </html>
