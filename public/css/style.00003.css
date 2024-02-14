@@ -129,6 +129,26 @@ body[data-highlight=the-future] .book-name .the-future .future { text-decoration
 }
 #services form label {
     display: flex;
+    flex-direction: row;
     align-items: flex-start;
     justify-content: normal;
+}
+#services input[type=text],
+#services input[type=email],
+#services textarea {
+    width: 30ch;
+}
+
+@media only screen and (max-width: 600px) {
+    #services form label {
+        flex-direction: column;
+    }
+    #services form .story-genre label {
+        flex-direction: row;
+    }
+    #services input[type=text],
+    #services input[type=email],
+    #services textarea {
+        width: 20ch;
+    }
 }
