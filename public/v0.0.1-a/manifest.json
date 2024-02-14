@@ -1,8 +1,8 @@
 {
   "name": "rskrules",
   "short_name": "rskrules",
-  "theme_color": "#4c1d1d",
-  "background_color": "#f5deb3",
+  "theme_color": "#a69261",
+  "background_color": "#000000",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
