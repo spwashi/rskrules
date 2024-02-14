@@ -52,6 +52,10 @@ ul {
 a {
     text-decoration: none;
 }
+a[aria-current=page] {
+    font-weight: bold;
+    text-decoration: underline;
+}
 a:hover, a:focus {
     font-weight: bold;
     text-decoration: underline;
@@ -113,8 +117,18 @@ body[data-highlight=the-future] .book-name .the-future .future { text-decoration
 }
 #services .how-to-get-a-signed-copy li > * {
     display: block;
-    white-space: pre;
+    white-space: nowrap;
 }
 #services > section {
     width: 100%;
+}
+
+#services form label > span {
+    width: 20%;
+    white-space: break-spaces;
+}
+#services form label {
+    display: flex;
+    align-items: center;
+    justify-content: normal;
 }
