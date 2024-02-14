@@ -1,0 +1,17 @@
+{
+  "name": "rskrules",
+  "short_name": "rskrules",
+  "theme_color": "#4c1d1d",
+  "background_color": "#f5deb3",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/public/v0.0.1-a/favicon/favicon.512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "portrait-primary"
+}
