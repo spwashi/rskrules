@@ -19,7 +19,7 @@
     }
   }
 
-  window.rskrules.components.genre = {
+  rsk.components.genre = {
     options: new Map([
       ["romance", "Romance"],
       ["fantasy", "Fantasy"],
@@ -30,16 +30,15 @@
     ])
   }
 
-  fetch('/public/v0.0.1-a/components/genre/rsk-genre.template.html')
-    .then(r => r.text())
-    .then(t => document.body.append(...rsk.util.fromHTML(t)))
-    .then(() => customElements.define("rsk-genre", Genre))
+  rsk.util.fetch('/public/v0.0.1-a/components/genre/rsk-genre.template.html')
+     .then(t => document.body.append(...rsk.util.fromHTML(t)))
+     .then(() => customElements.define("rsk-genre", Genre))
 
   function registerRoot() {
-    window.rskrules               = window.rskrules || {};
-    window.rskrules.components    = window.rskrules.components || {};
-    window.rskrules.util          = window.rskrules.util || {};
-    window.rskrules.util.fromHTML = (html, trim = true) => {
+    const scene         = window.rskrules = window.rskrules || {};
+    scene.components    = scene.components || {};
+    scene.util          = scene.util || {};
+    scene.util.fromHTML = (html, trim = true) => {
       html = trim ? html.trim() : html;
       if (!html) return [];
       const template     = document.createElement('template');
@@ -47,6 +46,13 @@
       const result       = template.content.children;
       return [...result];
     }
-    return window.rskrules;
+    scene.util.fetch    = (url, req) => {
+      const {protocol, host} = window.location;
+      if (url.startsWith('/public')) {
+        url = `${protocol}//${host}${url}`;
+      }
+      return fetch(url, req).then(r => r.text());
+    };
+    return scene;
   }
 }
