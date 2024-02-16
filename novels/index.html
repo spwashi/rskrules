@@ -8,6 +8,12 @@
     <link rel="manifest" href="/public/v0.0.1-a/manifest.json?v=24-02-13">
     <link rel="stylesheet" href="/public/css/style.00003.css?v=24-02-13">
     <link rel="icon" type="image/png" href="/public/v0.0.1-a/favicon/favicon.png?v=24-02-13?v=24-02-13">
+    <script src="/public/v0.0.1-a/components/genre/rsk-genre.js"></script>
+    <style>
+        article {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -21,20 +27,25 @@
     </header>
     <main>
         <h1>Novels</h1>
-        <h2 id="hemera-nyx">The Adventures of Hemera Nyx in the Galaxy of the Future!</h2>
-        <a href="https://www.amazon.com/dp/B0BSDL6ZXB" class="cover-art-link">
-            <figure>
-                <img height="300"
-                     src="/public/images/the_adventures_of_hemera_nyx_in_the_galaxy_of_the_future.jpeg"
-                     alt="Cover art"/>
-                <figcaption>The Adventures of Hemera Nyx in the Galaxy of the Future!</figcaption>
-            </figure>
-        </a>
-        <a href="/">
-            <figure>
-                <img height="100" src="/public/images/logo/logo.003.png" alt="logo">
-            </figure>
-        </a>
+        <article>
+            <h2 id="the-adventures-of-hemera-nyx--1">The Adventures of Hemera Nyx in the Galaxy of the Future!</h2>
+            <rsk-genre selection="adventure"></rsk-genre>
+            <a href="https://www.amazon.com/dp/B0BSDL6ZXB" class="cover-art-link">
+                <figure>
+                    <img height="300"
+                         src="/public/images/the_adventures_of_hemera_nyx_in_the_galaxy_of_the_future.jpeg"
+                         alt="Cover art"/>
+                    <figcaption>The Adventures of Hemera Nyx in the Galaxy of the Future!</figcaption>
+                </figure>
+            </a>
+        </article>
+        <footer>
+            <a href="/">
+                <figure>
+                    <img height="100" src="/public/images/logo/logo.003.png" alt="logo">
+                </figure>
+            </a>
+        </footer>
     </main>
 </body>
 </html>
