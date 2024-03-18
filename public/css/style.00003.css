@@ -85,9 +85,6 @@ main > ul {
 ul ul {
     max-width: 100%;
 }
-li {
-    max-width: 80%;
-}
 .cover-art-link {
     display: inline-flex;
 }
@@ -111,10 +108,6 @@ body[data-highlight=in] .book-name .in { font-weight: bold; }
 body[data-highlight=the-galaxy-of] .book-name .the-galaxy-of { font-weight: bold; }
 body[data-highlight=the-future] .book-name .the-future { font-weight: bold; }
 body[data-highlight=the-future] .book-name .the-future .future { text-decoration: underline; }
-.services .featured {
-    background-color: var(--visited-link-color);
-    color: white
-}
 #services .how-to-get-a-signed-copy li > * {
     display: block;
     white-space: nowrap;
@@ -129,7 +122,7 @@ body[data-highlight=the-future] .book-name .the-future .future { text-decoration
 }
 #services form label {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     justify-content: normal;
 }
@@ -137,6 +130,34 @@ body[data-highlight=the-future] .book-name .the-future .future { text-decoration
 #services input[type=email],
 #services textarea {
     width: 30ch;
+}
+
+#links {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
+section {
+    padding: 1rem;
+    outline: thin solid #333333;
+}
+section ul {
+    outline: none;
+}
+
+ul {
+    margin-bottom: 1rem;
+    padding: 0;
+}
+main ul li {
+    padding: .5rem 0;
+}
+
+a {
+    border-bottom: thin solid rgba(30, 30, 30, .4);
 }
 
 @media only screen and (max-width: 600px) {

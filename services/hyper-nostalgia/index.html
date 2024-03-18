@@ -4,10 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Hyper Nostalgia &bull; Developmental Editing</title>
-    <script defer data-domain="rskrules.com" src="https://plausible.io/js/script.js"></script>
-    <link rel="manifest" href="/public/v0.0.1-a/manifest.json?v=24-02-13">
-    <link rel="icon" type="image/png" href="/public/v0.0.1-a/favicon/favicon.png?v=24-02-13?v=24-02-13">
-    <link rel="stylesheet" href="/public/css/style.00003.css?v=24-02-13">
+    <script>function changeColor(elem) {
+      elem.style.backgroundColor = 'rgba(255,255,255,.5)';
+      setTimeout(function () {
+        elem.style.backgroundColor = 'transparent';
+      }, 300);
+    }
+
+    function replaceTextWithLink(textToFind, href) {
+      const paragraphs = document.getElementsByTagName('p');
+      for (let i = 0; i < paragraphs.length; i++) {
+        const paragraph = paragraphs[i];
+        const text      = paragraph.innerText;
+        if (text.includes(textToFind)) {
+          const link          = document.createElement('a');
+          link.href           = href;
+          link.innerText      = textToFind;
+          paragraph.innerHTML = paragraph.innerHTML.replace(textToFind, link.outerHTML);
+        }
+      }
+    }
+    </script>
+    <script defer data-domain="rskrules.com" src="https://plausible.io/js/script.js?"></script>
+    <link rel="manifest" href="/public/v0.0.1-a/manifest.json?v=24-03-11">
+    <link rel="icon" type="image/png" href="/public/v0.0.1-a/favicon/favicon.png?v=24-03-11">
+    <link rel="stylesheet" href="/public/css/style.00003.css?v=24-03-11">
     <style>
         #intro-to-hyper-nostalgia {
             display: flex;
@@ -21,6 +42,7 @@
             background: none;
             border: thin solid #333333;
             font-size: 20px;
+            font-weight: bold;
         }
         ::placeholder {
             color: #333333;
@@ -39,6 +61,29 @@
             color: blue;
             text-decoration: underline;
         }
+        form.submitted {
+            display: none;
+        }
+        figure {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column nowrap;
+        }
+        figure img {
+            outline: thin solid #333333;
+            padding: 1rem;
+            max-width: 200px;
+        }
+        figure > div:hover {
+            cursor: pointer;
+        }
+        figcaption {
+            margin: 1rem 0;
+            font-size: .9rem;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -56,6 +101,11 @@
         <h2 id="developmental-editing">Developmental Editing</h2>
         <section id="fast-friendly-feedback">
             <h3>Fast, Friendly Feedback:</h3>
+            <figure style="text-align: center">
+                <div onclick="changeColor(this)" style="outline: thin solid #333333; width: 200px; height: 200px; display: flex; justify-content: center; align-items: center;">
+                    &check;
+                </div>
+            </figure>
             <p>
                 <span>
                     You've been hard at work on your manuscript
@@ -68,6 +118,12 @@
             <p>
                 <span>Now what?</span>
             </p>
+            <a href="/manuscripts">
+                <figure>
+                    <img src="/public/images/manuscript.webp" alt="your glowing manuscript">
+                    <figcaption>our manuscripts illuminate captivating experiences</figcaption>
+                </figure>
+            </a>
             <p>
                 <span>Your finished draft is a living document, full of wonder, drama, comedy, and romance.</span>
                 <span>
@@ -75,6 +131,12 @@
                     that it can be difficult to tell where you end and the story begins.
                 </span>
             </p>
+            <a href="/knots">
+                <figure>
+                    <img src="/public/images/confusion.webp" alt="pre-edit">
+                    <figcaption>there may be knots that stifle clarity</figcaption>
+                </figure>
+            </a>
             <p>
                 <span>Of course what you've written makes perfect sense to you.</span>
                 <span>But is it coherent to anyone else?</span>
@@ -82,9 +144,16 @@
                 <span>Are they going to be completely lost?</span>
                 <span>What did you <em>actually</em> put on the paper?</span>
             </p>
+
             <p>
                 <span>This is where professional Developmental Editing can help.</span>
             </p>
+            <a href="/contact">
+                <figure>
+                    <img style="width: 300px" src="/public/images/logo/logo.003.png" alt="Hyper Nostalgia">
+                    <figcaption>send me an email to get started!</figcaption>
+                </figure>
+            </a>
             <p>
                 <span>Ready to get started?</span>
                 <span>Book an appointment or fill out the <a href="#contact-form">contact form</a> below and let's chat.</span>
@@ -198,69 +267,16 @@
         </section>
         <section id="query">
             <h3>Contact Form</h3>
-            <form id="contact-form" name="contact--hyper_nostalgia" netlify>
+            <form id="contact-form" name="contact--hyper_nostalgia">
                 <fieldset class="author-info">
                     <legend>Author Info</legend>
                     <label>
                         <span>Name</span>
-                        <input required type="text" name="author-name" placeholder="Author Name">
+                        <input type="text" name="name" placeholder="Author Name">
                     </label>
                     <label>
                         <span>Email</span>
-                        <input required type="email" name="email" placeholder="author@example.com">
-                    </label>
-                </fieldset>
-                <fieldset class="story-genre">
-                    <legend>Genre</legend>
-                    <label>
-                        <input type="checkbox" name="is-romance">
-                        <span>Romance</span>
-                    </label>
-                    <label>
-                        <input type="checkbox" name="is-fantasy">
-                        <span>Fantasy</span>
-                    </label>
-                    <label>
-                        <input type="checkbox" name="is-sci-fi">
-                        <span>Sci-Fi</span>
-                    </label>
-                    <label>
-                        <input type="checkbox" name="is-adventure">
-                        <span>Adventure</span>
-                    </label>
-                    <label>
-                        <input type="checkbox" name="is-horror">
-                        <span>Horror</span>
-                    </label>
-                    <label>
-                        <input type="checkbox" name="is-mystery-crime">
-                        <span>Mystery/Crime</span>
-                    </label>
-                    <label>
-                        <input type="checkbox" name="is-alternative-history">
-                        <span>Alternative History</span>
-                    </label>
-                    <label>
-                        <input type="checkbox" name="is-other-genre">
-                        <span>Other</span>
-                    </label>
-                </fieldset>
-                <fieldset class="story-synopsis">
-                    <legend>Info</legend>
-                    <label>
-                        <span>Length</span>
-                        <input required type="text" placeholder="75,000 words">
-                    </label>
-                    <label>
-                        <span>Synopsis</span>
-                        <textarea required name="synopsis" placeholder="Once upon a blurb..."></textarea>
-                    </label>
-                </fieldset>
-                <fieldset class="turnaround">
-                    <legend>Turnaround</legend>
-                    <label>
-                        <span>Date</span>
-                        <input type="date" name="turnaround">
+                        <input type="email" name="email" placeholder="author@example.com">
                     </label>
                 </fieldset>
                 <fieldset class="notes">
@@ -275,6 +291,32 @@
                     <button type="submit">submit</button>
                 </fieldset>
             </form>
+            <script>
+              document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                let formElement = event.target;
+                const form      = new FormData(formElement);
+                const data      = {};
+                for (var [key, value] of form.entries()) {
+                  data[key] = value;
+                }
+                const prodApiUrl = 'https://api.rskrules.com';
+                fetch(`${prodApiUrl}/contact/hyper-nostalgia`, {
+                  method:  'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body:    JSON.stringify(data),
+                })
+                  .then(function (response) {
+                    return response.json();
+                  })
+                  .then(function (data) {
+                    formElement.classList.add('submitted');
+                    formElement.parentElement.appendChild(document.createTextNode('Thank you for your submission!'));
+                  });
+              });
+            </script>
         </section>
         <a href="/">
             <figure>
@@ -283,4 +325,7 @@
         </a>
     </main>
 </body>
+<script>
+  replaceTextWithLink('comedy', '/comedy');
+</script>
 </html>

@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>RSK &bull; Home</title>
     <script defer data-domain="rskrules.com" src="https://plausible.io/js/script.js"></script>
-    <link rel="manifest" href="/public/v0.0.1-a/manifest.json?v=24-02-13">
-    <link rel="icon" type="image/png" href="/public/v0.0.1-a/favicon/favicon.png?v=24-02-13?v=24-02-13">
-    <link rel="stylesheet" href="/public/css/style.00003.css?v=24-02-13">
+    <link rel="manifest" href="/public/v0.0.1-a/manifest.json?v=24-03-11">
+    <link rel="icon" type="image/png" href="/public/v0.0.1-a/favicon/favicon.png?v=24-03-11">
+    <link rel="stylesheet" href="/public/css/style.00003.css?v=24-03-11">
     <script>
       const highlightOptions = [
         'the-adventures-of',
@@ -23,24 +23,33 @@
         i++;
       }, 500);
     </script>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <ul>
                 <li><a aria-current="page" href="/">home</a></li>
-                <li><a href="/services">services</a></li>
                 <li><a href="/novels">novels</a></li>
+                <li><a href="/contact">contact</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h1><a href="https://sites.google.com/view/rskrules/?safe=active">RSK's Official Website</a></h1>
-        <h2>Links</h2>
-        <ul>
+        <h1 style="margin: 4rem 0;"><a href="https://sites.google.com/view/rskrules/?safe=active">RSK's Official Website</a></h1>
+        <a target="_blank" href="/contact" style="border: thin solid #333333">
+            <figure>
+                <img height="100" src="/public/images/logo/logo.003.png" alt="logo">
+            </figure>
+        </a>
+        <ul id="links">
             <li>
                 <h3><a href="/novels">Novels</a></h3>
-                <ul>
+                <ul class="hidden">
                     <li><a href="/novels#the-adventures-of-hemera-nyx--1" class="book-name">
                         <span class="the-adventures-of">The Adventures of</span>
                         <span class="hemera-nyx">Hemera Nyx</span>
@@ -52,32 +61,27 @@
             </li>
             <li class="services">
                 <h3><a href="/services">Services</a></h3>
-                <ul>
+                <ul class="hidden">
                     <li><a href="/services#book-signing">Book Signings</a></li>
                     <li><a href="/services#hyper-nostalgia" class="featured">Developmental Editing</a></li>
                 </ul>
             </li>
             <li>
-                <h3>Social Media</h3>
-                <ul>
+                <h3><a href="/ecosystem/web/social-media">Social Media</a></h3>
+                <ul class="hidden" id="social-media">
                     <li><a href="https://www.tiktok.com/@rskrules">TikTok</a></li>
                     <li><a href="https://www.youtube.com/@RSKrules/">YouTube</a></li>
                 </ul>
             </li>
             <li>
-                <h3>Support Channels</h3>
-                <ul>
+                <!--                <h3><a href="#boon">Boon</a></h3>-->
+                <ul id="boon" class="hidden">
                     <li><a href="https://www.patreon.com/rskrules">Patreon</a></li>
                     <li><a href="https://paypal.me/rskrules">PayPal</a></li>
                     <li><a href="https://ko-fi.com/rskrules">Ko-fi</a></li>
                 </ul>
             </li>
         </ul>
-        <a href="/">
-            <figure>
-                <img height="100" src="/public/images/logo/logo.003.png" alt="logo">
-            </figure>
-        </a>
     </main>
     <footer>
         <p>&copy; 2024 RSK</p>

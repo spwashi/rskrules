@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quest</title>
+    <script defer data-domain="rskrules.com" src="https://plausible.io/js/script.js"></script>
+    <link rel="stylesheet" href="/public/css/style.00003.css?v=24-03-11">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="icon" type="image/png" href="/public/v0.0.1-a/favicon/favicon.png?v=24-03-11">
+    <link rel="manifest" href="/public/v0.0.1-a/manifest.json?v=24-03-11">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">home</a></li>
+                <li><a href="/services">services</a></li>
+                <li><a href="/novels">novels</a></li>
+                <li><a aria-current="page" href="/ecosystem/web">ecosystem</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Is this what you were looking for?</h1>
+        <section>
+            <iframe id="portal" width="300" height="300" src="https://bone.land/identity/4f4adcbf8c6f66dcfc8a3282ac2bf10a?title=comedy"></iframe>
+            <script>
+              let portal = document.getElementById('portal');
+              setTimeout(() => {
+                portal.contentWindow.postMessage(window.location.pathname, '*');
+              }, 1000)
+            </script>
+        </section>
+    </main>
+</body>
+</html>

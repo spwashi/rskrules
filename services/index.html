@@ -5,18 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Services</title>
     <script defer data-domain="rskrules.com" src="https://plausible.io/js/script.js"></script>
-    <link rel="manifest" href="/public/v0.0.1-a/manifest.json?v=24-02-13">
-    <link rel="icon" type="image/png" href="/public/v0.0.1-a/favicon/favicon.png?v=24-02-13?v=24-02-13">
-    <link rel="stylesheet" href="/public/css/style.00003.css?v=24-02-13">
+    <link rel="manifest" href="/public/v0.0.1-a/manifest.json?v=24-03-11">
+    <link rel="icon" type="image/png" href="/public/v0.0.1-a/favicon/favicon.png?v=24-03-11">
+    <link rel="stylesheet" href="/public/css/style.00003.css?v=24-03-11">
+    <script src="https://bone.lore.land/public/occasion.js?v=24-03-11"></script>
     <style>
-        .engagement-handle {
-            cursor: pointer;
+        .occasion {
+            color: #336289;
         }
-        .require-engagement {
-            display: none;
-        }
-        .require-engagement.active {
-            display: block;
+        figure {
+            text-align: center;
         }
     </style>
 </head>
@@ -32,104 +30,28 @@
     </header>
     <main id="services">
         <h1>Services</h1>
-        <ul class="services">
-            <li><a href="/services/hyper-nostalgia#developmental-editing" class="featured">Developmental Editing</a></li>
-            <li><a href="/services/book-signing">Book Signing</a></li>
-        </ul>
-        <section id="book-signing">
-            <h2>Book Signing</h2>
-            <h3>Want a Custom Signed Copy?</h3>
-            <p>Signed physical copies of my books are a great way to support me, and you'll get a custom author-signed novel in return!</p>
-            <p>Currently, there are two methods of getting a signed copy:</p>
-            <ul class="how-to-get-a-signed-copy">
-                <li>
-                    <a href="#signed-book--round-trip">
-                        <strong>Option 1:</strong>
-                        <span>Round Trip</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#signed-book--from-the-source">
-                        <strong>Option 2:</strong>
-                        <span>From the source</span>
-                    </a>
-                </li>
-            </ul>
-            <section id="signed-book--round-trip">
-                <header aria-controls="round-trip-details" class="engagement-handle">
-                    <h4 class="option-1">Option 1: Round Trip!</h4>
-                </header>
-                <section id="round-trip-details" class="require-engagement" data-topic="#signed-book--round-trip">
-                    <p>This one is pretty simple.</p>
-                    <ol>
-                        <li>
-                            <p>Buy a physical copy from Amazon.</p>
-                        </li>
-                        <li>
-                            <p>Mail it to my <a href="https://sites.google.com/view/rskrules/signed-copies">P.O Box</a></p>
-                        </li>
-                        <li>
-                            <p>I'll sign it and send it back to you!</p>
-                        </li>
-                    </ol>
-                    <p>
-                        <strong>Please send at least $5 per copy</strong> to help cover the cost of mailing it back to you.
-                        Anything above the cost of mailing I'll consider a donation.
-                    </p>
-                    <a href="https://sites.google.com/view/rskrules/signed-copies">P.O Box Details</a>
-                </section>
-            </section>
-            <section id="signed-book--from-the-source">
-                <header aria-controls="from-the-source-details" class="engagement-handle">
-                    <h4 class="option-2">Option 2: From the source!</h4>
-                </header>
-                <section id="from-the-source-details" class="require-engagement" data-topic="#signed-book--from-the-source">
-                    <p>This is a great way to support my ecosystem. And you get a signed copy!</p>
-                    <ul>
-                        <li>Signed Paperback: $50</li>
-                        <li>Signed Hardcover: $80</li>
-                    </ul>
-                    <p>
-                        You can pay via <a href="https://paypal.me/rskrules?country.x=US&locale.x=en_US">PayPal</a> or <a href="https://ko-fi.com/rskrules">Ko-Fi</a>.
-                        Please be sure to add the following in the notes:
-                    </p>
-                    <ul>
-                        <li>Book/Cover choice</li>
-                        <li>Mailing address</li>
-                        <li>Custom instructions</li>
-                    </ul>
-                    <p>Your book will arrive within a few weeks!</p>
-                </section>
-            </section>
-            <p>
-                Updates to this information will be posted <a href="https://sites.google.com/view/rskrules/signed-copies?authuser=0">[here]</a>.
-            </p>
-        </section>
         <section id="developmental-editing">
-            <h2 id="hyper-nostalgia">Hyper Nostalgia</h2>
+            <h2 id="hyper-nostalgia"><a href="/services/hyper-nostalgia">Hyper Nostalgia</a></h2>
+            <a href="https://rskrules.quest/?from=hypernostalgia">
+                <figure>
+                    <img style="width: 300px" src="/public/images/hypernostalgia.webp" alt="Hyper Nostalgia">
+                </figure>
+            </a>
             <h3 id=""><a href="https://sites.google.com/view/hyper-nostalgia/">Developmental Editing</a></h3>
             <div class="learn-more">Learn more <a href="/services/hyper-nostalgia#developmental-editing">[here]</a></div>
         </section>
-        <a href="/">
+        <br>
+        <a href="/contact" style="border: thin solid #333333">
             <figure>
                 <img height="100" src="/public/images/logo/logo.003.png" alt="logo">
             </figure>
         </a>
+        <br>
+        <ul class="services">
+            <li><a href="/services/reading/beta">Beta Reading</a></li>
+            <li><a href="/services/book-signing">Book Signing</a></li>
+            <li><a href="/services/hyper-nostalgia#developmental-editing">Developmental Editing</a></li>
+        </ul>
     </main>
-    <script type="application/javascript">
-      document.querySelectorAll('.engagement-handle').forEach(element => {
-        element.addEventListener('click', () => {
-          console.log('here')
-          document.getElementById(element.getAttribute('aria-controls')).classList.toggle('active')
-        })
-      });
-
-      const hash = document.location.hash;
-      document.querySelectorAll('[data-topic]').forEach(element => {
-        if (hash === element.dataset.topic) {
-          element.classList.add('active')
-        }
-      });
-    </script>
 </body>
 </html>
